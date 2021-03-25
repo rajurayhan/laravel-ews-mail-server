@@ -1,5 +1,5 @@
 {
-    "name": "rajurayhan/ews-mail-server",
+    "name": "rajurayhan/laravel-ews-mail-server",
     "description": "Send Email from Laravel using Microsoft Exchange Web Services (EWS).",
     "type": "library",
     "license": "MIT",
