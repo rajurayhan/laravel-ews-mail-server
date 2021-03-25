@@ -1,9 +1,9 @@
 <?php
 
 /*
- * This file is part of the BnDateTime package.
+ * This file is part of the Laravel Exchange Mail Server package.
  *
- * Copyright (c) 2018 Raju Rayhan
+ * Copyright (c) 2021 Raju Rayhan
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -54,7 +54,7 @@ class ExchangeMailServer
 
     }
 
-    public static function saveMessage($client, $receiverData, $messageData){
+    private static function saveMessage($client, $receiverData, $messageData){
         // Build the request,
         $username = 'survey@nsiteam.com';
         $request = new CreateItemType();
@@ -115,7 +115,7 @@ class ExchangeMailServer
         return $draftItems;
     }
 
-    public static function sendMessage($client, $draftItems){
+    private static function sendMessage($client, $draftItems){
         $request = new SendItemType();
         $request->SaveItemToFolder = true;
         $request->ItemIds = new NonEmptyArrayOfBaseItemIdsType();

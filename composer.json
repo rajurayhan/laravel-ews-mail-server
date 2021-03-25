@@ -18,5 +18,12 @@
         "psr-4": {
             "Raju\\EWSMail\\": "src/"
         }
-    }
+    }, 
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Raju\\EWSMail\\ExchangeMailServiceProvider"
+            ]
+        }
+    },
 }
