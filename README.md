@@ -14,8 +14,7 @@ Publish Configuration and Setup your Credentials
     php artisan vendor:publish --tag=ewsmailserver
 
 ## Usage
-
-This package shipped with a built in streaming route - 
+Simple! 
   
     use Raju\EWSMail\ExchangeMailServer;
     ExchangeMailServer::sendEmail(['name' => 'Raju at LHG', 'email' => 'raju@lhgraphics.com'], ['subject' => 'Mail From Package', 'body' => 'Message Body']);
