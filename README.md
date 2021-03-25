@@ -2,7 +2,7 @@
 
 ## Sending Email via Microsoft Exchange Web Services (EWS) made easy! 
 
-
+![image info](https://upload.wikimedia.org/wikipedia/commons/a/a0/Microsoft_Exchange_logo.svg)
 ## Installation
 
 Install via Composer
