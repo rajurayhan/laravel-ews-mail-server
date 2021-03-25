@@ -32,7 +32,7 @@ class ExchangeMailServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-                __DIR__.'/../config/ews-mail-server.php.php' => config_path('ews-mail-server.php')
+                __DIR__.'/../config/ews-mail-server.php' => config_path('ews-mail-server.php')
             ], 'ewsmailserver');
     }
 }

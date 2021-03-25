@@ -39,10 +39,10 @@ class ExchangeMailServer
 {
     public static function sendEmail($receiverData, $messageData){
 
-        $host = 'mymail.123together.com';
-        $username = 'survey@nsiteam.com';
-        $password = 'HourGlass#20';
-        $version = Client::VERSION_2016;
+        $host       = config('ews-mail-server.host');
+        $username   = config('ews-mail-server.username');
+        $password   = config('ews-mail-server.password');
+        $version    = config('ews-mail-server.version');
 
         $client = new Client($host, $username, $password, $version);
 
