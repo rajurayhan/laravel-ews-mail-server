@@ -56,7 +56,7 @@ class ExchangeMailServer
 
     private static function saveMessage($client, $receiverData, $messageData){
         // Build the request,
-        $username = 'survey@nsiteam.com';
+        $username = config('ews-mail-server.username');
         $request = new CreateItemType();
         $request->Items = new NonEmptyArrayOfAllItemsType();
 
