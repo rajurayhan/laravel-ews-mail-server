@@ -1,13 +1,13 @@
 {
-    "name": "rajurayhan/laravel-ews-mail-server",
+    "name": "klukiyan/laravel-ews-mail-server",
     "description": "Send Email from Laravel using Microsoft Exchange Web Services (EWS).",
     "type": "library",
     "license": "MIT",
     
     "authors":[
         {
-            "name"  : "Raju Rayhan", 
-            "email" : "raju.rayhan@yandex.com"
+            "name"  : "Kiril Lukiyan", 
+            "email" : "kiril.lukiyan@gmail.com"
         }
     ], 
     "minimum-stability": "dev",

@@ -37,7 +37,7 @@ use \jamesiarmes\PhpEws\Type\TargetFolderIdType;
 
 class ExchangeMailServer
 {
-    public static function sendEmail($receiverData, $messageData){
+    public static function sendEmail($recs, $messageData, $cc = []){
 
         $host       = config('ews-mail-server.host');
         $username   = config('ews-mail-server.username');
@@ -46,7 +46,7 @@ class ExchangeMailServer
 
         $client = new Client($host, $username, $password, $version);
 
-        $savedMessage = self::saveMessage($client, $receiverData, $messageData);
+        $savedMessage = self::saveMessage($client, $recs, $messageData, $cc);
 
         if($savedMessage){
             self::sendMessage($client, $savedMessage);
@@ -54,7 +54,7 @@ class ExchangeMailServer
 
     }
 
-    private static function saveMessage($client, $receiverData, $messageData){
+    private static function saveMessage($client, $recs, $messageData, $cc = []){
         // Build the request,
         $username = config('ews-mail-server.username');
         $request = new CreateItemType();
@@ -67,6 +67,7 @@ class ExchangeMailServer
         $message = new MessageType();
         $message->Subject = $messageData['subject'];
         $message->ToRecipients = new ArrayOfRecipientsType();
+        $message->CcRecipients = new ArrayOfRecipientsType();
 
         // Set the sender.
         $message->From = new SingleRecipientType();
@@ -74,10 +75,16 @@ class ExchangeMailServer
         $message->From->Mailbox->EmailAddress = $username;
 
         // Set the recipient.
-        $recipient = new EmailAddressType();
-        $recipient->Name = $receiverData['name'];
-        $recipient->EmailAddress = $receiverData['email'];
-        $message->ToRecipients->Mailbox[] = $recipient;
+        foreach ($recs as $rec) {
+          $recipient = new EmailAddressType();
+          $recipient->EmailAddress = $rec;
+          $message->ToRecipients->Mailbox[] = $recipient;
+        }
+        foreach ($cc as $cc) {
+          $recipient = new EmailAddressType();
+          $recipient->EmailAddress = $cc;
+          $message->CcRecipients->Mailbox[] = $recipient;
+        }
 
         // Set the message body.
         $body = htmlentities($messageData['body']);
