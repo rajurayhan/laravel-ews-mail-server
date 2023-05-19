@@ -1,6 +1,9 @@
 # Intro
-Big thanks to @rajurayhan and his package `rajurayhan/laravel-ews-mail-server`
+Big thanks to @rajurayhan and his package `rajurayhan/laravel-ews-mail-server`, which works great but was abandoned.
 I needed to send multiple to: and cc: so I upgraded it a little bit to accept the to and (optional) cc values.
+I didn't use the "To Name" anymore because it's not required and replaced it with and array and added also the array of optional CC!
+
+_I will keep maintaining and updating this package with new features in the future. (like multi-account support)_
 
 # Send Mail via Exchange Web Services!
 
