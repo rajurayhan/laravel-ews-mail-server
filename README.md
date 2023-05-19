@@ -24,10 +24,8 @@ Publish Configuration and Setup your Credentials
 Simple! 
   
     use Raju\EWSMail\ExchangeMailServer;
-    ExchangeMailServer::sendEmail(['name' => 'Raju at LHG', 'email' => 'raju@lhgraphics.com'], ['subject' => 'Mail From Package', 'body' => 'Message Body']);
+    ExchangeMailServer::sendEmail(['user@email.com','user2@gmail.com','etc@etc'], ['subject' => 'Mail From Package', 'body' => 'Message Body'],['optional@cc.to']);
 
 ## Note     
  Update your credentials config/ews-mail-server.php 
- 
-## Find Me
-	Email: devraju.bd@gmail.com 
+
