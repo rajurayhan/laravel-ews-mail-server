@@ -105,7 +105,7 @@ class ExchangeMailServer {
               
               // Ensure proper encoding
               $attachment->Content = $fileContent;
-              $attachment->IsInline = true;
+              $attachment->IsInline = false;
               
               // Add to attachments
               $message->Attachments->FileAttachment[] = $attachment;
