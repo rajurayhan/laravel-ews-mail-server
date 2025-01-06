@@ -30,7 +30,13 @@ class ExchangeMailServer {
     $password   = config('ews-mail-server.password');
     $version    = config('ews-mail-server.version');
 
-    $client = new Client($host, $username, $password, $version);
+    $client = new Client($host, $username, $password, $version, [
+        'curlopts' => [
+            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_SSL_VERIFYPEER => false,
+        ],
+    ]);
+
 
     $savedMessage = self::saveMessage($client, $recs, $messageData, $cc, $attachments);
 
