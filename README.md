@@ -1,3 +1,10 @@
+# Intro
+Big thanks to @rajurayhan and his package `rajurayhan/laravel-ews-mail-server`, which works great but was abandoned.
+I needed to send multiple to: and cc: so I upgraded it a little bit to accept the to and (optional) cc values.
+I didn't use the "To Name" anymore because it's not required and replaced it with and array and added also the array of optional CC!
+
+_I will keep maintaining and updating this package with new features in the future. (like multi-account support)_
+
 # Send Mail via Exchange Web Services!
 
 ## Sending Email via Microsoft Exchange Web Services (EWS) made easy! 
@@ -7,7 +14,7 @@
 
 Install via Composer
 
-    composer require rajurayhan/laravel-ews-mail-server dev-master
+    composer require klukiyan/laravel-ews-mail-server dev-master
 
 Publish Configuration and Setup your Credentials
 
@@ -17,10 +24,8 @@ Publish Configuration and Setup your Credentials
 Simple! 
   
     use Raju\EWSMail\ExchangeMailServer;
-    ExchangeMailServer::sendEmail(['name' => 'Raju at LHG', 'email' => 'raju@lhgraphics.com'], ['subject' => 'Mail From Package', 'body' => 'Message Body']);
+    ExchangeMailServer::sendEmail(['user@email.com','user2@gmail.com','etc@etc'], ['subject' => 'Mail From Package', 'body' => 'Message Body'],['optional@cc.to'],[optional $attachment_paths]);
 
 ## Note     
  Update your credentials config/ews-mail-server.php 
- 
-## Find Me
-	Email: devraju.bd@gmail.com 
+
