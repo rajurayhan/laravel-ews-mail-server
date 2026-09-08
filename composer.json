@@ -1,29 +1,55 @@
 {
     "name": "rajurayhan/laravel-ews-mail-server",
-    "description": "Send Email from Laravel using Microsoft Exchange Web Services (EWS).",
+    "description": "Send mail from Laravel via Microsoft Graph (Exchange Online). Replaces the v1 EWS / basic-auth transport.",
     "type": "library",
     "license": "MIT",
-    
-    "authors":[
+    "keywords": [
+        "laravel",
+        "microsoft-graph",
+        "exchange",
+        "office365",
+        "mail",
+        "ews"
+    ],
+    "authors": [
         {
-            "name"  : "Raju Rayhan", 
-            "email" : "send2raju.bd@gmail.com"
+            "name": "Raju Rayhan",
+            "email": "send2raju.bd@gmail.com"
         }
-    ], 
-    "minimum-stability": "dev",
+    ],
     "require": {
-        "php-ews/php-ews": "^1.0"
+        "php": "^8.2",
+        "illuminate/http": "^11.0|^12.0|^13.0",
+        "illuminate/mail": "^11.0|^12.0|^13.0",
+        "illuminate/support": "^11.0|^12.0|^13.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "phpunit/phpunit": "^11.0"
     },
     "autoload": {
         "psr-4": {
             "Raju\\EWSMail\\": "src/"
         }
-    }, 
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Raju\\EWSMail\\Tests\\": "tests/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
                 "Raju\\EWSMail\\ExchangeMailServiceProvider"
             ]
         }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
     }
 }
